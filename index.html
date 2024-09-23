@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenant Water Monitor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Login and Sign-up forms -->
+        <div id="auth-section">
+            <h1>Tenant Water Monitor</h1>
+            <div id="login-form">
+                <h2>Login</h2>
+                <input type="text" id="login-username" placeholder="Username">
+                <input type="password" id="login-password" placeholder="Password">
+                <button onclick="login()">Login</button>
+                <p>Don't have an account? <span onclick="showSignUp()">Sign Up</span></p>
+            </div>
+
+            <div id="signup-form" style="display:none;">
+                <h2>Sign Up</h2>
+                <input type="text" id="signup-username" placeholder="Username">
+                <input type="password" id="signup-password" placeholder="Password">
+                <button onclick="signUp()">Sign Up</button>
+                <p>Already have an account? <span onclick="showLogin()">Login</span></p>
+            </div>
+        </div>
+
+        <!-- Tenant Dashboard (Visible after login) -->
+        <div id="dashboard" style="display:none;">
+            <h1>Welcome, <span id="tenant-name"></span></h1>
+            <div class="tenant">
+                <h3>Jerricans Fetched</h3>
+                <p><span id="tenant-count">0</span>/5</p>
+                <button id="fetch-btn" onclick="fetchJerrican()">Fetch Jerrican</button>
+            </div>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+            <p class="note">*Limit: 5 jerricans per tenant per week</p>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
